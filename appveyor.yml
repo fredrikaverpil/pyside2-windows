@@ -68,13 +68,14 @@ environment:
       QT: "C:\\Qt\\5.9\\msvc2015_64"
       PYSIDE_BRANCH: "5.9"
       OPENSSL: "C:\\OpenSSL-Win64\\bin"
-      VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 15.0\\VC\\vcvarsall.bat"
+      VS: "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Auxiliary\\Build\\vcvarsall.bat"
       ARCH: amd64
       image: Visual Studio 2017
       platform: x64
       fast_finish: true
 
 init:
+  - dir %VSAPPIDDIR%
   - dir "C:\Program Files (x86)\"
   - "ECHO %PYTHON%"
   - SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
