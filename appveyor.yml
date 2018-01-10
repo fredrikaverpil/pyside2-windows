@@ -8,9 +8,6 @@ branches:
   only:
     - master
 
-# build options
-build: false
-
 environment:
   # environment docs: https://www.appveyor.com/docs/build-environment/
 
@@ -30,16 +27,16 @@ environment:
     #   platform: x86
     #   fast_finish: true
 
-    # # Qt 5.6, Python 3.5 64-bit, MSVC2015 (v14)
-    # - PYTHON: "C:\\Python35-x64"
-    #   QT: "C:\\Qt\\5.6\\msvc2015_64"
-    #   PYSIDE_BRANCH: "5.6"
-    #   OPENSSL: "C:\\OpenSSL-Win64\\bin"
-    #   VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
-    #   ARCH: amd64
-    #   APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-    #   platform: x64
-    #   fast_finish: true
+    # Qt 5.6, Python 3.5 64-bit, MSVC2015 (v14)
+    - PYTHON: "C:\\Python35-x64"
+      QT: "C:\\Qt\\5.6\\msvc2015_64"
+      PYSIDE_BRANCH: "5.6"
+      OPENSSL: "C:\\OpenSSL-Win64\\bin"
+      VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
+      ARCH: amd64
+      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+      platform: x64
+      fast_finish: true
 
     # # Qt 5.6, Python 3.6 32-bit, MSVC2015 (v14)
     # - PYTHON: "C:\\Python36"
@@ -63,43 +60,54 @@ environment:
     #   platform: x64
     #   fast_finish: true
 
-    # Qt 5.9, Python 3.5 64-bit, MSVC2015 (v14)
-    - PYTHON: "C:\\Python35-x64"
-      QT: "C:\\Qt\\5.9\\msvc2015_64"
-      PYSIDE_BRANCH: "5.9"
-      OPENSSL: "C:\\OpenSSL-Win64\\bin"
-      VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
-      ARCH: amd64
-      LIBCLANG_ZIP_FOLDER: http://download.qt.io/development_releases/prebuilt/libclang
-      LIBCLANG_ZIP: libclang-release_39-windows-vs2015_64.7z
-      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-      platform: x64
-      fast_finish: true
+    # # Qt 5.9, Python 3.5 64-bit, MSVC2015 (v14)
+    # - PYTHON: "C:\\Python35-x64"
+    #   QT: "C:\\Qt\\5.9\\msvc2015_64"
+    #   PYSIDE_BRANCH: "5.9"
+    #   OPENSSL: "C:\\OpenSSL-Win64\\bin"
+    #   VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
+    #   ARCH: amd64
+    #   LIBCLANG_ZIP_FOLDER: http://download.qt.io/development_releases/prebuilt/libclang
+    #   LIBCLANG_ZIP: libclang-release_39-windows-vs2015_64.7z
+    #   APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    #   platform: x64
+    #   fast_finish: true
+
 
 init:
   - pwd
-  - dir
-  - "ECHO %PYTHON%"
   - SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
   - python -c "import sys; x = sys.version; print(x)"
-  - git clone --recursive --branch %PYSIDE_BRANCH% https://code.qt.io/pyside/pyside-setup.git C:\pyside-setup
   - if defined VS call "%VS%" %ARCH%
+  # - git clone --recursive --branch %PYSIDE_BRANCH% https://code.qt.io/pyside/pyside-setup.git C:\pyside-setup
+
+  - mkdir %CD%\artifacts
+  - cp "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat" %CD%\artifacts
+  - dir %CD%\artifacts
 
 install:
-  # libclang
-  - if [%PYSIDE_BRANCH%]==[5.6] (echo "No need to install libclang")
-  - if [%PYSIDE_BRANCH%]==[5.9] (echo "Install libclang")
+  # libclang required for PySide2 5.9 branch
   - if [%PYSIDE_BRANCH%]==[5.9] (curl -L -fsS -o %LIBCLANG_ZIP% %LIBCLANG_ZIP_FOLDER%/%LIBCLANG_ZIP%)
-  - dir
   - if [%PYSIDE_BRANCH%]==[5.9] (7z x %LIBCLANG_ZIP%)
   - if [%PYSIDE_BRANCH%]==[5.9] (SET LLVM_INSTALL_DIR=%CD%\libclang)
 
 before_build:
   - pip install wheel
 
-build_script:
-  - python C:\pyside-setup\setup.py bdist_wheel --ignore-git --standalone --no-examples --jom --qmake="%QT%\bin\qmake.exe" --openssl="%OPENSSL" --cmake="%CMAKE%"
+# build_script:
+#   - python C:\pyside-setup\setup.py bdist_wheel --ignore-git --standalone --no-examples --jom --qmake="%QT%\bin\qmake.exe" --openssl="%OPENSSL" --cmake="%CMAKE%"
 
-test_script:
-  - dir C:\pyside-setup\dist\*.whl
+# disable automatic MSVC builds
+build: off
+
+# before_test:
+  # - dir C:\pyside-setup\dist\*.whl
+  # - pip install C:\pyside-setup\dist\PySide2*.whl
+
+# very simple test, not actually sufficient to test the standalone wheel
+# test_script:
+#   - python -c "import PySide2"
+
+artifacts:
+  - path: artifacts\*.bat
 
