@@ -75,7 +75,7 @@ environment:
       fast_finish: true
 
 init:
-  - dir C:\\Program Files (x86)\\
+  - dir "C:\Program Files (x86)\"
   - "ECHO %PYTHON%"
   - SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
   - python -c "import sys; x = sys.version; print(x)"
