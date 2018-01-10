@@ -87,7 +87,7 @@ install:
   # libclang
   - if [%PYSIDE_BRANCH%]==[5.6] (echo "No need to install libclang")
   - if [%PYSIDE_BRANCH%]==[5.9] (echo "Install libclang")
-  - ps: Start-FileDownload '%LIBCLANG_ZIP_FOLDER%/%LIBCLANG_ZIP%'
+  - ps: Start-FileDownload '$Env:LIBCLANG_ZIP_FOLDER/$Env:LIBCLANG_ZIP'
   - if [%PYSIDE_BRANCH%]==[5.9] (7z x %LIBCLANG_ZIP%)
   - if [%PYSIDE_BRANCH%]==[5.9] (SET LLVM_INSTALL_DIR=%CD%\libclang)
 
