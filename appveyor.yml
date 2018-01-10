@@ -65,12 +65,14 @@ environment:
 
     # Qt 5.9, Python 3.5 64-bit, MSVC2015 (v14)
     - PYTHON: "C:\\Python35-x64"
-      QT: "C:\\Qt\\5.9\\msvc2017_64"
+      QT: "C:\\Qt\\5.9\\msvc2015_64"
       PYSIDE_BRANCH: "5.9"
       OPENSSL: "C:\\OpenSSL-Win64\\bin"
-      VS: "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Auxiliary\\Build\\vcvarsall.bat"
+      VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
       ARCH: amd64
-      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+      LIBCLANG_ZIP_FOLDER: http://download.qt.io/development_releases/prebuilt/libclang
+      LIBCLANG_ZIP: libclang-release_39-windows-vs2015_64.7z
+      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
       platform: x64
       fast_finish: true
 
@@ -83,8 +85,13 @@ init:
   - if defined VS call "%VS%" %ARCH%
 
 install:
+  # libclang
   - if [%PYSIDE_BRANCH%]==[5.6] (echo "No need to install libclang")
-  - if [%PYSIDE_BRANCH%]==[5.9] (echo "To do; Install libclang")
+  - if [%PYSIDE_BRANCH%]==[5.9] (echo "Install libclang")
+  - if [%PYSIDE_BRANCH%]==[5.9] (ps: Start-FileDownload '%LIBCLANG_ZIP_FOLDER%/%LIBCLANG_ZIP%')
+  - if [%PYSIDE_BRANCH%]==[5.9] (7z x %LIBCLANG_ZIP%)
+  - if [%PYSIDE_BRANCH%]==[5.9] (SET LLVM_INSTALL_DIR=%CD%\libclang)
+
 
 before_build:
   - pip install wheel
