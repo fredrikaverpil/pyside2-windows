@@ -94,8 +94,9 @@ install:
 before_build:
   - pip install wheel
 
-# build_script:
-#   - python C:\pyside-setup\setup.py bdist_wheel --ignore-git --standalone --no-examples --jom --qmake="%QT%\bin\qmake.exe" --openssl="%OPENSSL" --cmake="%CMAKE%"
+build_script:
+  # - python C:\pyside-setup\setup.py bdist_wheel --ignore-git --standalone --no-examples --jom --qmake="%QT%\bin\qmake.exe" --openssl="%OPENSSL" --cmake="%CMAKE%"
+  - echo test
 
 # disable automatic MSVC builds
 build: off
