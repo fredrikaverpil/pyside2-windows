@@ -96,14 +96,15 @@ before_build:
 
 build_script:
   # - python C:\pyside-setup\setup.py bdist_wheel --ignore-git --standalone --no-examples --jom --qmake="%QT%\bin\qmake.exe" --openssl="%OPENSSL" --cmake="%CMAKE%"
-  - echo test
+  - python -c "print('build here')"
 
 # disable automatic MSVC builds
 build: off
 
-# before_test:
+before_test:
   # - dir C:\pyside-setup\dist\*.whl
   # - pip install C:\pyside-setup\dist\PySide2*.whl
+  - echo "before test"
 
 # very simple test, not actually sufficient to test the standalone wheel
 test_script:
