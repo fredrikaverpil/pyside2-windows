@@ -94,15 +94,15 @@ before_build:
 build_script:
   # - python C:\pyside-setup\setup.py bdist_wheel --ignore-git --standalone --no-examples --jom --qmake="%QT%\bin\qmake.exe" --openssl="%OPENSSL" --cmake="%CMAKE%"
   - python -c "print('build here')"
-  - mkdir %CD%\artifacts
-  - xcopy "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\*.bat" %CD%\artifacts
+
 
 # disable automatic MSVC builds
-build: off
+# build: off
 
 # since build is off, after_build will not work.
-# after_build:
-  # - ...
+after_build:
+  - mkdir %CD%\artifacts
+  - xcopy "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\*.bat" %CD%\artifacts
 
 before_test:
   # - dir C:\pyside-setup\dist\*.whl
