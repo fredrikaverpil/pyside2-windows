@@ -7,6 +7,6 @@ This is a temporary development/research repository...
 
 ### To do
 
-* Build PySide2 standalone wheels (5.6, 5.9 branches) for Windows
-* Add built wheels as artifacts to the AppVeyor builds
-* Attach built wheels to tagged releases
+- [x] Build PySide2 standalone wheels (5.6, 5.9 branches) for Windows
+- [x] Add built wheels as artifacts to the AppVeyor builds
+- [ ] Attach built wheels to tagged releases
