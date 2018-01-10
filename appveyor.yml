@@ -30,16 +30,16 @@ environment:
     #   platform: x86
     #   fast_finish: true
 
-    # Qt 5.6, Python 3.5 64-bit, MSVC2015 (v14)
-    - PYTHON: "C:\\Python35-x64"
-      QT: "C:\\Qt\\5.6\\msvc2015_64"
-      PYSIDE_BRANCH: "5.6"
-      OPENSSL: "C:\\OpenSSL-Win64\\bin"
-      VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
-      ARCH: amd64
-      image: Visual Studio 2015
-      platform: x64
-      fast_finish: true
+    # # Qt 5.6, Python 3.5 64-bit, MSVC2015 (v14)
+    # - PYTHON: "C:\\Python35-x64"
+    #   QT: "C:\\Qt\\5.6\\msvc2015_64"
+    #   PYSIDE_BRANCH: "5.6"
+    #   OPENSSL: "C:\\OpenSSL-Win64\\bin"
+    #   VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
+    #   ARCH: amd64
+    #   image: Visual Studio 2015
+    #   platform: x64
+    #   fast_finish: true
 
     # # Qt 5.6, Python 3.6 32-bit, MSVC2015 (v14)
     # - PYTHON: "C:\\Python36"
