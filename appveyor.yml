@@ -121,6 +121,7 @@ init:
 
 install:
   - pip install wheel
+  - pip install lxml
   # libclang required for PySide2 5.9 branch
   - if [%PYSIDE_BRANCH%]==[5.9] (curl -L -fsS -o %LIBCLANG_ZIP% %LIBCLANG_ZIP_FOLDER%/%LIBCLANG_ZIP%)
   - if [%PYSIDE_BRANCH%]==[5.9] (7z x %LIBCLANG_ZIP%)
