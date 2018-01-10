@@ -105,8 +105,9 @@ build: off
   # - pip install C:\pyside-setup\dist\PySide2*.whl
 
 # very simple test, not actually sufficient to test the standalone wheel
-# test_script:
-#   - python -c "import PySide2"
+test_script:
+  # - python -c "import PySide2"
+  - python -c "print('test')"
 
 artifacts:
   - path: artifacts\*.bat
