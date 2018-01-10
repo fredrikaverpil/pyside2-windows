@@ -81,10 +81,6 @@ init:
   - if defined VS call "%VS%" %ARCH%
   # - git clone --recursive --branch %PYSIDE_BRANCH% https://code.qt.io/pyside/pyside-setup.git C:\pyside-setup
 
-  - mkdir %CD%\artifacts
-  - xcopy "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\*.bat" %CD%\artifacts
-  - dir %CD%\artifacts
-
 install:
   # libclang required for PySide2 5.9 branch
   - if [%PYSIDE_BRANCH%]==[5.9] (curl -L -fsS -o %LIBCLANG_ZIP% %LIBCLANG_ZIP_FOLDER%/%LIBCLANG_ZIP%)
@@ -100,6 +96,12 @@ build_script:
 
 # disable automatic MSVC builds
 build: off
+
+after_build:
+  - mkdir %CD%\artifacts
+  - xcopy "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\*.bat" %CD%\artifacts
+  - dir %CD%\artifacts
+
 
 before_test:
   # - dir C:\pyside-setup\dist\*.whl
