@@ -93,15 +93,12 @@ before_build:
 build_script:
   # - python C:\pyside-setup\setup.py bdist_wheel --ignore-git --standalone --no-examples --jom --qmake="%QT%\bin\qmake.exe" --openssl="%OPENSSL" --cmake="%CMAKE%"
   - python -c "print('build here')"
-
-# disable automatic MSVC builds
-build: off
-
-after_build:
   - mkdir %CD%\artifacts
   - xcopy "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\*.bat" %CD%\artifacts
   - dir %CD%\artifacts
 
+# disable automatic MSVC builds
+build: off
 
 before_test:
   # - dir C:\pyside-setup\dist\*.whl
