@@ -10,3 +10,4 @@ This is a temporary development/research repository...
 - [x] Build PySide2 standalone wheels (5.6, 5.9 branches) for Windows
 - [x] Add built wheels as artifacts to the AppVeyor builds
 - [ ] Attach built wheels to tagged releases
+- [ ] Attempt install of libxml2, libXslt
