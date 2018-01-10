@@ -77,6 +77,8 @@ environment:
       fast_finish: true
 
 init:
+  - pwd
+  - dir
   - "ECHO %PYTHON%"
   - SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
   - python -c "import sys; x = sys.version; print(x)"
@@ -89,6 +91,7 @@ install:
   - if [%PYSIDE_BRANCH%]==[5.9] (echo "Install libclang")
   - curl -fsS -o %LIBCLANG_ZIP% %LIBCLANG_ZIP_FOLDER%/%LIBCLANG_ZIP%
   - if [%PYSIDE_BRANCH%]==[5.9] (7z x %LIBCLANG_ZIP%)
+  - dir
   - if [%PYSIDE_BRANCH%]==[5.9] (SET LLVM_INSTALL_DIR=%CD%\libclang)
 
 
