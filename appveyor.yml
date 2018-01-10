@@ -107,6 +107,7 @@ before_test:
   # - dir C:\pyside-setup\dist\*.whl
   # - pip install C:\pyside-setup\dist\PySide2*.whl
   - echo "before test"
+  - pwd
   - dir %CD%\artifacts
 
 # very simple test, not actually sufficient to test the standalone wheel
