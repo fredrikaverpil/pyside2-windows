@@ -139,8 +139,8 @@ after_build:
   - xcopy "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" %CD%\wheels
 
 before_test:
-  # - for %i in (%CD%\wheels\*.whl) pip install %i
-  - for %i in (%CD%\wheels\*.bat) echo %i
+  # - for %i in (%CD%\wheels\*.whl) do pip install %i
+  - for %i in (%CD%\wheels\*.bat) do echo %i
 
 # # very simple test, not actually sufficient to test the standalone wheel
 # test_script:
