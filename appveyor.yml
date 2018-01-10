@@ -16,16 +16,16 @@ environment:
     CMAKE: "C:\\Program Files (x86)\\cmake\\bin\\cmake.exe"
 
   matrix:
-    # # Qt 5.6, Python 3.5 32-bit, MSVC2015 (v14)
-    # - PYTHON: "C:\\Python35"
-    #   QT: "C:\\Qt\\5.6\\msvc2015"
-    #   PYSIDE_BRANCH: "5.6"
-    #   OPENSSL: "C:\\OpenSSL-Win32\\bin"
-    #   VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
-    #   ARCH: x86
-    #   APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-    #   platform: x86
-    #   fast_finish: true
+    # Qt 5.6, Python 3.5 32-bit, MSVC2015 (v14)
+    - PYTHON: "C:\\Python35"
+      QT: "C:\\Qt\\5.6\\msvc2015"
+      PYSIDE_BRANCH: "5.6"
+      OPENSSL: "C:\\OpenSSL-Win32\\bin"
+      VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
+      ARCH: x86
+      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+      platform: x86
+      fast_finish: true
 
     # Qt 5.6, Python 3.5 64-bit, MSVC2015 (v14)
     - PYTHON: "C:\\Python35-x64"
@@ -38,41 +38,79 @@ environment:
       platform: x64
       fast_finish: true
 
-    # # Qt 5.6, Python 3.6 32-bit, MSVC2015 (v14)
-    # - PYTHON: "C:\\Python36"
-    #   QT: "C:\\Qt\\5.6\\msvc2015"
-    #   PYSIDE_BRANCH: "5.6"
-    #   OPENSSL: "C:\\OpenSSL-Win32\\bin"
-    #   VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
-    #   ARCH: x86
-    #   APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-    #   platform: x86
-    #   fast_finish: true
+    # Qt 5.6, Python 3.6 32-bit, MSVC2015 (v14)
+    - PYTHON: "C:\\Python36"
+      QT: "C:\\Qt\\5.6\\msvc2015"
+      PYSIDE_BRANCH: "5.6"
+      OPENSSL: "C:\\OpenSSL-Win32\\bin"
+      VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
+      ARCH: x86
+      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+      platform: x86
+      fast_finish: true
 
-    # # Qt 5.6, Python 3.6 64-bit, MSVC2015 (v14)
-    # - PYTHON: "C:\\Python36-x64"
-    #   QT: "C:\\Qt\\5.6\\msvc2015_64"
-    #   PYSIDE_BRANCH: "5.6"
-    #   OPENSSL: "C:\\OpenSSL-Win64\\bin"
-    #   VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
-    #   ARCH: amd64
-    #   APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-    #   platform: x64
-    #   fast_finish: true
+    # Qt 5.6, Python 3.6 64-bit, MSVC2015 (v14)
+    - PYTHON: "C:\\Python36-x64"
+      QT: "C:\\Qt\\5.6\\msvc2015_64"
+      PYSIDE_BRANCH: "5.6"
+      OPENSSL: "C:\\OpenSSL-Win64\\bin"
+      VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
+      ARCH: amd64
+      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+      platform: x64
+      fast_finish: true
 
-    # # Qt 5.9, Python 3.5 64-bit, MSVC2015 (v14)
-    # - PYTHON: "C:\\Python35-x64"
-    #   QT: "C:\\Qt\\5.9\\msvc2015_64"
-    #   PYSIDE_BRANCH: "5.9"
-    #   OPENSSL: "C:\\OpenSSL-Win64\\bin"
-    #   VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
-    #   ARCH: amd64
-    #   LIBCLANG_ZIP_FOLDER: http://download.qt.io/development_releases/prebuilt/libclang
-    #   LIBCLANG_ZIP: libclang-release_39-windows-vs2015_64.7z
-    #   APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-    #   platform: x64
-    #   fast_finish: true
+    # Qt 5.9, Python 3.5 32-bit, MSVC2015 (v14)
+    - PYTHON: "C:\\Python35"
+      QT: "C:\\Qt\\5.9\\msvc2015"
+      PYSIDE_BRANCH: "5.9"
+      LIBCLANG_ZIP_FOLDER: http://download.qt.io/development_releases/prebuilt/libclang
+      LIBCLANG_ZIP: libclang-release_39-windows-vs2015_64.7z
+      OPENSSL: "C:\\OpenSSL-Win32\\bin"
+      VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
+      ARCH: x86
+      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+      platform: x86
+      fast_finish: true
 
+    # Qt 5.9, Python 3.5 64-bit, MSVC2015 (v14)
+    - PYTHON: "C:\\Python35-x64"
+      QT: "C:\\Qt\\5.9\\msvc2015_64"
+      PYSIDE_BRANCH: "5.9"
+      LIBCLANG_ZIP_FOLDER: http://download.qt.io/development_releases/prebuilt/libclang
+      LIBCLANG_ZIP: libclang-release_39-windows-vs2015_64.7z
+      OPENSSL: "C:\\OpenSSL-Win64\\bin"
+      VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
+      ARCH: amd64
+      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+      platform: x64
+      fast_finish: true
+
+    # Qt 5.9, Python 3.6 32-bit, MSVC2015 (v14)
+    - PYTHON: "C:\\Python36"
+      QT: "C:\\Qt\\5.9\\msvc2015"
+      PYSIDE_BRANCH: "5.9"
+      LIBCLANG_ZIP_FOLDER: http://download.qt.io/development_releases/prebuilt/libclang
+      LIBCLANG_ZIP: libclang-release_39-windows-vs2015_64.7z
+      OPENSSL: "C:\\OpenSSL-Win32\\bin"
+      VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
+      ARCH: x86
+      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+      platform: x86
+      fast_finish: true
+
+    # Qt 5.9, Python 3.6 64-bit, MSVC2015 (v14)
+    - PYTHON: "C:\\Python36-x64"
+      QT: "C:\\Qt\\5.9\\msvc2015_64"
+      PYSIDE_BRANCH: "5.9"
+      LIBCLANG_ZIP_FOLDER: http://download.qt.io/development_releases/prebuilt/libclang
+      LIBCLANG_ZIP: libclang-release_39-windows-vs2015_64.7z
+      OPENSSL: "C:\\OpenSSL-Win64\\bin"
+      VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
+      ARCH: amd64
+      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+      platform: x64
+      fast_finish: true
 
 init:
   - pwd
@@ -95,17 +133,15 @@ build_script:
   - python C:\pyside-setup\setup.py bdist_wheel --ignore-git --standalone --no-examples --jom --qmake="%QT%\bin\qmake.exe" --openssl="%OPENSSL" --cmake="%CMAKE%"
 
 after_build:
-  - mkdir %CD%\artifacts
-  - xcopy C:\pyside-setup\dist\PySide2*.whl %CD%\artifacts
+  - mkdir %CD%\wheels
+  - xcopy C:\pyside-setup\dist\PySide2*.whl %CD%\wheels
 
-# before_test:
-#   - dir C:\pyside-setup\dist\*.whl
-#   - pip install C:\pyside-setup\dist\PySide2*.whl
+before_test:
+  - for %i in (%CD%\wheels\*.whl) pip install %i
 
 # very simple test, not actually sufficient to test the standalone wheel
-# test_script:
-#   - python -c "import PySide2"
+test_script:
+  - python -c "import PySide2"
 
 artifacts:
-  - path: artifacts\*.whl
-
+  - path: wheels\*.whl
