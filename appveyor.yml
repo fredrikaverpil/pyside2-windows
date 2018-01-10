@@ -82,41 +82,30 @@ init:
   # - git clone --recursive --branch %PYSIDE_BRANCH% https://code.qt.io/pyside/pyside-setup.git C:\pyside-setup
 
 install:
+  - pip install wheel
   # libclang required for PySide2 5.9 branch
   - if [%PYSIDE_BRANCH%]==[5.9] (curl -L -fsS -o %LIBCLANG_ZIP% %LIBCLANG_ZIP_FOLDER%/%LIBCLANG_ZIP%)
   - if [%PYSIDE_BRANCH%]==[5.9] (7z x %LIBCLANG_ZIP%)
   - if [%PYSIDE_BRANCH%]==[5.9] (SET LLVM_INSTALL_DIR=%CD%\libclang)
 
-before_build:
-  - pip install wheel
-
+# before_build:
+#  - ...
 
 build_script:
-  # - python C:\pyside-setup\setup.py bdist_wheel --ignore-git --standalone --no-examples --jom --qmake="%QT%\bin\qmake.exe" --openssl="%OPENSSL" --cmake="%CMAKE%"
-  - python -c "print('build here')"
+  - python C:\pyside-setup\setup.py bdist_wheel --ignore-git --standalone --no-examples --jom --qmake="%QT%\bin\qmake.exe" --openssl="%OPENSSL" --cmake="%CMAKE%"
 
-
-# disable automatic MSVC builds
-# build: off
-
-# since build is off, after_build will not work.
 after_build:
   - mkdir %CD%\artifacts
-  - xcopy "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\*.bat" %CD%\artifacts
+  - xcopy C:\pyside-setup\dist\PySide2*.whl %CD%\artifacts
 
-before_test:
-  # - dir C:\pyside-setup\dist\*.whl
-  # - pip install C:\pyside-setup\dist\PySide2*.whl
-  - echo "before test"
-  - pwd
-  - dir %CD%\artifacts
+# before_test:
+#   - dir C:\pyside-setup\dist\*.whl
+#   - pip install C:\pyside-setup\dist\PySide2*.whl
 
 # very simple test, not actually sufficient to test the standalone wheel
-test_script:
-  # - python -c "import PySide2"
-  - python -c "print('test')"
-  - python -c "import glob; print(glob.glob('.'))"
+# test_script:
+#   - python -c "import PySide2"
 
 artifacts:
-  - path: artifacts\*.bat
+  - path: artifacts\*.whl
 
