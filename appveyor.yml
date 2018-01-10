@@ -86,12 +86,13 @@ install:
   - if [%PYSIDE_BRANCH%]==[5.9] (curl -L -fsS -o %LIBCLANG_ZIP% %LIBCLANG_ZIP_FOLDER%/%LIBCLANG_ZIP%)
   - if [%PYSIDE_BRANCH%]==[5.9] (7z x %LIBCLANG_ZIP%)
   - if [%PYSIDE_BRANCH%]==[5.9] (SET LLVM_INSTALL_DIR=%CD%\libclang)
-
-before_build:
-  - pip install wheel
   - mkdir %CD%\artifacts
   - xcopy "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\*.bat" %CD%\artifacts
   - dir %CD%\artifacts
+
+before_build:
+  - pip install wheel
+
 
 build_script:
   # - python C:\pyside-setup\setup.py bdist_wheel --ignore-git --standalone --no-examples --jom --qmake="%QT%\bin\qmake.exe" --openssl="%OPENSSL" --cmake="%CMAKE%"
