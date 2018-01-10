@@ -65,7 +65,7 @@ environment:
 
     # Qt 5.9, Python 3.5 64-bit, MSVC2015 (v14)
     - PYTHON: "C:\\Python35-x64"
-      QT: "C:\\Qt\\5.9\\msvc2015_64"
+      QT: "C:\\Qt\\5.9\\msvc2017_64"
       PYSIDE_BRANCH: "5.9"
       OPENSSL: "C:\\OpenSSL-Win64\\bin"
       VS: "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Auxiliary\\Build\\vcvarsall.bat"
@@ -75,7 +75,7 @@ environment:
       fast_finish: true
 
 init:
-  - dir "C:\Qt"
+  - dir "C:\Qt\5.9"
   - "ECHO %PYTHON%"
   - SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
   - python -c "import sys; x = sys.version; print(x)"
