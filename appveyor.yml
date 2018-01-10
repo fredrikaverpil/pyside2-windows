@@ -77,18 +77,17 @@ environment:
       fast_finish: true
 
 init:
-  - dir "C:\Qt\5.9"
   - "ECHO %PYTHON%"
   - SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
   - python -c "import sys; x = sys.version; print(x)"
-  - git clone --recursive --branch %PYSIDE_BRANCH% https://code.qt.io/pyside/pyside-setup.git C:\pyside-setup
+  # - git clone --recursive --branch %PYSIDE_BRANCH% https://code.qt.io/pyside/pyside-setup.git C:\pyside-setup
   - if defined VS call "%VS%" %ARCH%
 
 install:
   # libclang
   - if [%PYSIDE_BRANCH%]==[5.6] (echo "No need to install libclang")
   - if [%PYSIDE_BRANCH%]==[5.9] (echo "Install libclang")
-  - if [%PYSIDE_BRANCH%]==[5.9] (ps: Start-FileDownload '%LIBCLANG_ZIP_FOLDER%/%LIBCLANG_ZIP%')
+  - ps: Start-FileDownload '%LIBCLANG_ZIP_FOLDER%/%LIBCLANG_ZIP%'
   - if [%PYSIDE_BRANCH%]==[5.9] (7z x %LIBCLANG_ZIP%)
   - if [%PYSIDE_BRANCH%]==[5.9] (SET LLVM_INSTALL_DIR=%CD%\libclang)
 
