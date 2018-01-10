@@ -113,6 +113,7 @@ before_test:
 test_script:
   # - python -c "import PySide2"
   - python -c "print('test')"
+  - python -c "import glob; print(glob.glob('.'))"
 
 artifacts:
   - path: artifacts\*.bat
