@@ -70,7 +70,7 @@ environment:
       OPENSSL: "C:\\OpenSSL-Win64\\bin"
       VS: "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\VC\\Auxiliary\\Build\\vcvarsall.bat"
       ARCH: amd64
-      image: Visual Studio 2017
+      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
       platform: x64
       fast_finish: true
 
