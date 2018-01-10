@@ -117,7 +117,7 @@ init:
   - SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
   - python -c "import sys; x = sys.version; print(x)"
   - if defined VS call "%VS%" %ARCH%
-  # - git clone --recursive --branch %PYSIDE_BRANCH% https://code.qt.io/pyside/pyside-setup.git C:\pyside-setup
+  - git clone --recursive --branch %PYSIDE_BRANCH% https://code.qt.io/pyside/pyside-setup.git C:\pyside-setup
 
 install:
   - pip install wheel
@@ -135,16 +135,14 @@ build_script:
 
 after_build:
   - mkdir %CD%\wheels
-  # - xcopy C:\pyside-setup\dist\PySide2*.whl %CD%\wheels
-  - xcopy "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" %CD%\wheels
+  - xcopy C:\pyside-setup\dist\PySide2*.whl %CD%\wheels
 
 before_test:
-  # - for %i in (%CD%\wheels\*.whl) do pip install %i
-  - for %%i in (%CD%\wheels\*.bat) do echo %%i
+  - for %%i in (%CD%\wheels\*.whl) do pip install %%i
 
-# # very simple test, not actually sufficient to test the standalone wheel
-# test_script:
-#   - python -c "import PySide2"
+# very simple test, not actually sufficient to test the standalone wheel
+test_script:
+  - python -c "import PySide2"
 
-# artifacts:
-#   - path: wheels\*.whl
+artifacts:
+  - path: wheels\*.whl
