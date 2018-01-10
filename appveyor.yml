@@ -82,7 +82,7 @@ init:
   # - git clone --recursive --branch %PYSIDE_BRANCH% https://code.qt.io/pyside/pyside-setup.git C:\pyside-setup
 
   - mkdir %CD%\artifacts
-  - cp "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat" %CD%\artifacts
+  - cp "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\*.bat" %CD%\artifacts
   - dir %CD%\artifacts
 
 install:
