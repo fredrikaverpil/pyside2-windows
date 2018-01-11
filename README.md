@@ -7,9 +7,12 @@ This is a (possibly temporary?) development/research repository for building sta
 
 ### Download the standalone wheels
 
-1. Enter the [latest AppVeyor build](https://ci.appveyor.com/project/fredrikaverpil/pyside2-windows)
-1. Click one of the jobs (depending on which version you want), then click on the "ARTIFACTS" link
+1. Enter the [AppVeyor build history](https://ci.appveyor.com/project/fredrikaverpil/pyside2-windows/history)
+1. Click one of the green builds
+1. Click one of the jobs (depending on which version you want)
+1. Click on the "ARTIFACTS" link
 1. Download the wheel
+
 
 
 ### To do
