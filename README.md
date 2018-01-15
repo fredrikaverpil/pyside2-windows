@@ -1,6 +1,6 @@
 # pyside2-windows
 
-[![Build status](https://ci.appveyor.com/api/projects/status/pvpmp90yfftl9klp?svg=true)](https://ci.appveyor.com/project/hmaarrfk/pyside2-windows)
+[![Build status](https://ci.appveyor.com/api/projects/status/fhgrc83ql9w09kei/branch/master?svg=true)](https://ci.appveyor.com/project/fredrikaverpil/pyside2-windows/branch/master)
 
 This is a (possibly temporary?) development/research repository for building standalone PySide2 wheels on Windows.
 
