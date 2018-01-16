@@ -148,15 +148,14 @@ test_script:
   - python -c "import PySide2"
 
 artifacts:
-  - path: "*.whl"
+  - path: '*.whl'
 
 deploy:
-  release: build $(APPVEYOR_BUILD_VERSION)
+  release: Build $(APPVEYOR_BUILD_VERSION)
   # description: 'Release description'
   provider: GitHub
   auth_token:
     secure: b3mQF8mVGm4ZCnWap1OxJqnCC80dJJeCOlYblx56T2C87EhzZBGejoosw46xBZAI
-  # artifact: wheels\*.whl
   artifact: /.*\.whl/
   draft: false
   prerelease: false
