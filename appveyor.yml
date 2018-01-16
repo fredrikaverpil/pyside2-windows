@@ -131,7 +131,11 @@ install:
   - if [%PYSIDE_BRANCH%]==[5.9] (SET LLVM_INSTALL_DIR=%CD%\libclang)
 
 # before_build:
-#  - ...
+  # Fix bug https://bugreports.qt.io/browse/PYSIDE-357
+  - sed -i -e "s~\b\(packages\b.*\)],~\1, 'pyside2uic.Compiler', 'pyside2uic.port_v' + str(sys.version_info[0])],~" C:/pyside-setup/setup.py
+  # Verify sed hacks
+  - type C:\pyside-setup\setup.py
+
 
 build_script:
   - python C:\pyside-setup\setup.py bdist_wheel --ignore-git --standalone --no-examples --jom --qmake="%QT%\bin\qmake.exe" --openssl="%OPENSSL" --cmake="%CMAKE%"
