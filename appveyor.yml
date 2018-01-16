@@ -140,7 +140,7 @@ build_script:
 after_build:
   - mkdir %CD%\wheels
   # - xcopy C:\pyside-setup\dist\PySide2*.whl %CD%\wheels
-  - xcopy "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" %CD%\wheels
+  - xcopy "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" %CD%
 
 # before_test:
 #   - for %%i in (%CD%\wheels\*.whl) do pip install %%i
@@ -151,16 +151,16 @@ after_build:
 
 artifacts:
   # - path: wheels\*.whl
-  - path: wheels\*.bat
+  - path: *.bat
 
 deploy:
-  release: pyside2-windows $(APPVEYOR_REPO_COMMIT_TIMESTAMP)
+  release: pyside2-windows build $(APPVEYOR_BUILD_VERSION)
   # description: 'Release description'
   provider: GitHub
   auth_token:
     secure: b3mQF8mVGm4ZCnWap1OxJqnCC80dJJeCOlYblx56T2C87EhzZBGejoosw46xBZAI
   # artifact: wheels\*.whl
-  artifact: wheels\*.bat
+  artifact: /.*\.bat/
   draft: false
   prerelease: false
   on:
