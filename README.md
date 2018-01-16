@@ -7,19 +7,9 @@ This is a (possibly temporary?) development/research repository for building sta
 
 ### Download the standalone wheels
 
-1. Enter the [AppVeyor build history](https://ci.appveyor.com/project/fredrikaverpil/pyside2-windows/history)
-1. Click one of the green builds
-1. Click one of the jobs (depending on which version you want)
-1. Click on the "ARTIFACTS" link
-1. Download the wheel
+Tagged releases contain built PySide2 wheels.
 
-
-
-### To do
-
-- [x] Build PySide2 standalone wheels (5.6, 5.9 branches) for Windows
-- [x] Add built wheels as artifacts to the AppVeyor builds
-- [ ] Attach built wheels to tagged releases?
+If you wish to check the wheels produced by e.g. a PR, see the [AppVeyor build history](https://ci.appveyor.com/project/fredrikaverpil/pyside2-windows/history), navigate to a build and download the attached artifacts.
 
 
 ### Known issues
