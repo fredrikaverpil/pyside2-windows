@@ -29,7 +29,7 @@ If you wish to check the wheels produced by e.g. a PR, see the [AppVeyor build h
 Tagging causes AppVeyor to generate a release and attach the built wheels to it. Use lightweight tags for simplicity:
 
 ```bash
-git commit -am "My changes..."
+git commit -am "Commit all of my changes..."
 git tag v0.0.1
-git push
+git push origin v0.0.1
 ```
