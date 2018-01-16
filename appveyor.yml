@@ -151,7 +151,7 @@ after_build:
 
 artifacts:
   # - path: wheels\*.whl
-  - path: /.*\.bat/
+  - path: "*.bat"
 
 deploy:
   release: pyside2-windows build $(APPVEYOR_BUILD_VERSION)
