@@ -38,5 +38,5 @@ Tagging causes AppVeyor to generate a release and attach the built wheels to it.
 git commit -am "Commit all of my changes..."
 git push  # triggers an AppVeyor build
 git tag v0.0.1
-git push origin v0.0.1  # pushes the tag and triggers a build
+git push origin v0.0.1  # cancels previous build, starts new build and generates release
 ```
