@@ -134,21 +134,23 @@ install:
 #  - ...
 
 build_script:
-  - python C:\pyside-setup\setup.py bdist_wheel --ignore-git --standalone --no-examples --jom --qmake="%QT%\bin\qmake.exe" --openssl="%OPENSSL" --cmake="%CMAKE%"
+  # - python C:\pyside-setup\setup.py bdist_wheel --ignore-git --standalone --no-examples --jom --qmake="%QT%\bin\qmake.exe" --openssl="%OPENSSL" --cmake="%CMAKE%"
+  echo "Hello"
 
 after_build:
-  - mkdir %CD%\wheels
-  - xcopy C:\pyside-setup\dist\PySide2*.whl %CD%
+  # - xcopy C:\pyside-setup\dist\PySide2*.whl %CD%
+  - xcopy %VS% %CD%
 
-before_test:
-  - for %%i in (%CD%\*.whl) do pip install %%i
+# before_test:
+#   - for %%i in (%CD%\*.whl) do pip install %%i
 
-# very simple test, not actually sufficient to test the standalone wheel
-test_script:
-  - python -c "import PySide2"
+# # very simple test, not actually sufficient to test the standalone wheel
+# test_script:
+#   - python -c "import PySide2"
 
 artifacts:
-  - path: '*.whl'
+  # - path: '*.whl'
+  - path: '*.bat'
 
 deploy:
   release: PySide2 $(APPVEYOR_REPO_TAG_NAME)
@@ -157,7 +159,8 @@ deploy:
   provider: GitHub
   auth_token:
     secure: b3mQF8mVGm4ZCnWap1OxJqnCC80dJJeCOlYblx56T2C87EhzZBGejoosw46xBZAI
-  artifact: /.*\.whl/
+  # artifact: /.*\.whl/
+  artifact: /.*\.bat/
   draft: false
   prerelease: false
   on:
