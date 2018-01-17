@@ -151,8 +151,9 @@ artifacts:
   - path: '*.whl'
 
 deploy:
-  release: Build $(APPVEYOR_BUILD_VERSION)
-  # description: 'Release description'
+  release: PySide2 $(APPVEYOR_REPO_TAG_NAME)
+  tag: $(APPVEYOR_REPO_TAG_NAME)  # Prevent endlessly creating new releases/tags
+  description: 'AppVeyor build $(APPVEYOR_BUILD_VERSION)'
   provider: GitHub
   auth_token:
     secure: b3mQF8mVGm4ZCnWap1OxJqnCC80dJJeCOlYblx56T2C87EhzZBGejoosw46xBZAI
