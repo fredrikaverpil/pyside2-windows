@@ -131,6 +131,7 @@ install:
   - if [%PYSIDE_BRANCH%]==[5.9] (SET LLVM_INSTALL_DIR=%CD%\libclang)
 
 before_build:
+# Show which commit is being used
  - git --git-dir C:\pyside-setup\.git log -n 1
 
 build_script:
