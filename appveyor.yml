@@ -139,7 +139,7 @@ build_script:
 
 after_build:
   # - xcopy C:\pyside-setup\dist\PySide2*.whl %CD%
-  - xcopy %VS% %CD%
+  - xcopy "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat" %CD%
 
 # before_test:
 #   - for %%i in (%CD%\*.whl) do pip install %%i
