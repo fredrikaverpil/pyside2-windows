@@ -33,7 +33,7 @@ Note: PRs attempting to fix upstream fixes will not be accepted. Please send you
 
 ## Notes tagging for a release
 
-Manual tagging causes Travis CI to generate a Github release and attach the built wheels to it. Tag using semver (`major.minor.patch`) but using the date of tagging/building, e.g. `2018.01.01`, since PySide2 does not yet have a maintained version string.
+Manual tagging causes Travis CI to generate a Github release and attach the built wheels to it. Tag using semver (`[v]major.minor.patch` or `YY.MM.DD`), e.g. `2018.01.01`, since PySide2 does not yet have a maintained version string.
 
 ```bash
 git commit -am "Commit all changes..."
