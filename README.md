@@ -19,23 +19,24 @@ If you wish to check the wheels produced by e.g. a PR, see the [AppVeyor build h
 ## Known issues
 
 ### Build issues
-- libxml2/libxslt libraries are not installed/available
+
+- `libxml2`/`libxslt` libraries are not installed/available. Is is also my understanding that the Windows version of PySide2 does not yet support these anyways.
 
 ### Upstream issues
-- [PYSIDE-356](https://bugreports.qt.io/browse/PYSIDE-356) pyside2uic of pyside-tools installs for Python 3 only
-- [PYSIDE-357](https://bugreports.qt.io/browse/PYSIDE-357) Compiler module missing from pyside2uic
+
+All upstream issues should be reported in the [official PySide issue tracker](https://bugreports.qt.io/projects/PYSIDE/issues).
 
 Note: PRs attempting to fix upstream fixes will not be accepted. Please send your PR upstream instead.
 
 <br><br>
 
 
-## Notes on releases
+## Notes tagging for a release
 
-Tagging causes AppVeyor to generate a release and attach the built wheels to it. Use lightweight tags for simplicity:
+Manual tagging causes AppVeyor to generate a Github release and attach the built wheels to it.
 
 ```bash
-git commit -am "Commit all of my changes..."
+git commit -am "Commit all changes..."
 git push  # triggers an AppVeyor build
 git tag v0.0.1
 git push origin v0.0.1  # cancels previous build, starts new build and generates release
