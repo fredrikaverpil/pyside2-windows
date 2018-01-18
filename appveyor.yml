@@ -146,7 +146,7 @@ before_build:
 
 
 build_script:
-  - python C:\pyside-setup\setup.py bdist_wheel --ignore-git --standalone --no-examples --jom --qmake="%QT%\bin\qmake.exe" --cmake="" --openssl="%OPENSSL" --cmake="%CMAKE%"
+  - python C:\pyside-setup\setup.py bdist_wheel --ignore-git --standalone --no-examples --jom --qmake="%QT%\bin\qmake.exe" --openssl="%OPENSSL" --cmake="%CMAKE%"
 
 
 after_build:
