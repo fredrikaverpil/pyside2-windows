@@ -139,12 +139,10 @@ install:
 before_build:
   # Show which commit is being used
   - git --git-dir C:\pyside-setup\.git log -n 1
-
-#   # Summary
-#   - python --version
-#   - cmake --version
-#   - git --version
-#   - clang --version
+  - python --version
+  - cmake --version
+  - git --version
+  - clang --version
 
 
 build_script:
