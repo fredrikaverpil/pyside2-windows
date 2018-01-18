@@ -136,15 +136,15 @@ install:
   - git clone --recursive --branch %PYSIDE_BRANCH% https://code.qt.io/pyside/pyside-setup.git C:\pyside-setup
 
 
-before_build:
-  # Show which commit is being used
-   - git --git-dir C:\pyside-setup\.git log -n 1
+# before_build:
+#   # Show which commit is being used
+#   - git --git-dir C:\pyside-setup\.git log -n 1
 
-  # Summary
-  - python --version
-  - cmake --version
-  - git --version
-  - clang --version
+#   # Summary
+#   - python --version
+#   - cmake --version
+#   - git --version
+#   - clang --version
 
 
 build_script:
