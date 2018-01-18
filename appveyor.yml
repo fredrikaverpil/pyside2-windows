@@ -121,6 +121,7 @@ init:
 
 install:
   - pip install wheel
+  - pip install sphinx
 
   # pip-installing lxml doesn't provide the libXml2/libxml2 libraries, only the binaries
   # - pip install lxml
