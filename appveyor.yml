@@ -3,10 +3,12 @@
 # version format
 version: 1.0.{build}
 
+
 # branches to build
 branches:
   only:
     - master
+
 
 environment:
   # environment docs: https://www.appveyor.com/docs/build-environment/
@@ -112,12 +114,12 @@ environment:
       platform: x64
       fast_finish: true
 
+
 init:
   - pwd
   - SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
-  - python -c "import sys; x = sys.version; print(x)"
   - if defined VS call "%VS%" %ARCH%
-  - git clone --recursive --branch %PYSIDE_BRANCH% https://code.qt.io/pyside/pyside-setup.git C:\pyside-setup
+
 
 install:
   - pip install wheel
@@ -131,25 +133,40 @@ install:
   - if [%PYSIDE_BRANCH%]==[5.9] (7z x %LIBCLANG_ZIP%)
   - if [%PYSIDE_BRANCH%]==[5.9] (SET LLVM_INSTALL_DIR=%CD%\libclang)
 
+  - git clone --recursive --branch %PYSIDE_BRANCH% https://code.qt.io/pyside/pyside-setup.git C:\pyside-setup
+
+
 before_build:
-# Show which commit is being used
- - git --git-dir C:\pyside-setup\.git log -n 1
+  # Show which commit is being used
+   - git --git-dir C:\pyside-setup\.git log -n 1
+
+  # Summary
+  - python --version
+  - cmake --version
+  - git --version
+  - clang --version
+
 
 build_script:
-  - python C:\pyside-setup\setup.py bdist_wheel --ignore-git --standalone --no-examples --jom --qmake="%QT%\bin\qmake.exe" --openssl="%OPENSSL" --cmake="%CMAKE%"
+  - python C:\pyside-setup\setup.py bdist_wheel --ignore-git --standalone --no-examples --jom --qmake="%QT%\bin\qmake.exe" --cmake="" --openssl="%OPENSSL" --cmake="%CMAKE%"
+
 
 after_build:
   - xcopy C:\pyside-setup\dist\PySide2*.whl %CD%
 
+
 before_test:
   - for %%i in (%CD%\*.whl) do pip install %%i
 
-# very simple test, not actually sufficient to test the standalone wheel
+
 test_script:
+  # very simple test, not actually sufficient to test the standalone wheel
   - python -c "import PySide2"
+
 
 artifacts:
   - path: '*.whl'
+
 
 deploy:
   release: $(APPVEYOR_REPO_TAG_NAME)
