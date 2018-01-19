@@ -2,7 +2,6 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/fhgrc83ql9w09kei/branch/master?svg=true)](https://ci.appveyor.com/project/fredrikaverpil/pyside2-windows/branch/master) [![Latest release](http://github-release-version.herokuapp.com/github/fredrikaverpil/pyside2-windows/release.svg?style=flat)](https://github.com/fredrikaverpil/pyside2-windows/releases/latest)
 
-:warning: This is a (possibly temporary?) development/research repository for building standalone PySide2 wheels on Windows.
 
 <br><br>
 
