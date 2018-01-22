@@ -30,7 +30,20 @@ Note: PRs attempting to fix upstream fixes will not be accepted. Please send you
 <br><br>
 
 
-## Notes tagging for a release
+## How does this work?
+
+
+### AppVeyor setup
+
+AppVeyor runs virtual Windows machines which are equipped with [preinstalled software](https://www.appveyor.com/docs/build-environment/#pre-installed-software), in which e.g. Python and Qt are already installed and available. Using a [build matrix](https://www.appveyor.com/docs/build-configuration/#build-matrix), multiple configurations can be defined and run the same commands as stipulated in the [`.appveyor.yml`](.appveyor.yml) file. Because of this, PySide2 builds are limited to whatever versions of e.g. Python and Qt are available at AppVeyor (which to date hasn't caused any problems).
+
+The built PySide2 wheels are registered as artifacts from the build process and are attached to each AppVeyor build. This also includes builds initiated by pull requests.
+
+If a tag initiated the AppVeyor job, a Github release is also peformed. All built wheels are deployed and attached to the Github release.
+
+<br><br>
+
+### Tagging creates a new relese
 
 Manual tagging causes Travis CI to generate a Github release and attach the built wheels to it. Tag using semver (`[v]major.minor.patch` or `YY.MM.DD`), e.g. `2018.01.01`, since PySide2 does not yet have a maintained version string.
 
