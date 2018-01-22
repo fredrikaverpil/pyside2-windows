@@ -41,6 +41,8 @@ The built PySide2 wheels are registered as artifacts from the build process and 
 
 If a tag initiated the AppVeyor job, a Github release is also peformed. All built wheels are deployed and attached to the Github release.
 
+[Rolling builds](https://www.appveyor.com/docs/build-configuration/#rolling-builds) are enabled for this project in AppVeyor, which means that queued up jobs are cancelled if a new job is initiated.
+
 <br><br>
 
 ### Tagging creates a new relese
