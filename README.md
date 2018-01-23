@@ -56,7 +56,7 @@ If a `git tag` initiated the AppVeyor job, a Github release is also peformed. Al
 
 ### Tagging creates a new relese
 
-Manual tagging causes AppVeyor to generate a Github release and attach the built wheels to it. Tag using semver (`[v]major.minor.patch` or `YY.MM.DD`), e.g. `2018.01.01`, since PySide2 does not yet have a maintained version string.
+Manual tagging causes a Github release to be created through CI deploy. PySide2 wheels will be attached to the release notes as they are fully built. Tag using semver (`[v]major.minor.patch` or `YY.MM.DD`), e.g. `2018.01.01`, since PySide2 does not yet have a maintained version string.
 
 ```bash
 git commit -am "Commit all changes..."
