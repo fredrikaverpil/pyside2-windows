@@ -119,6 +119,7 @@ init:
   - pwd
   - SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
   - if defined VS call "%VS%" %ARCH%
+  - dir C:\OpenSSL-Win64\bin
 
 
 install:
