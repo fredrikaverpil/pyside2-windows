@@ -2,8 +2,8 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/fhgrc83ql9w09kei/branch/master?svg=true)](https://ci.appveyor.com/project/fredrikaverpil/pyside2-windows/branch/master) [![Latest release](http://github-release-version.herokuapp.com/github/fredrikaverpil/pyside2-windows/release.svg?style=flat)](https://github.com/fredrikaverpil/pyside2-windows/releases/latest)
 
+Unoffical PySide2 standalone wheels for Windows.
 
-<br><br>
 
 ## Sister projects
 
@@ -12,31 +12,11 @@
 - pyside2-windows (this project)
 
 
-<br><br>
-
-
 ## Download the standalone wheels
 
 [Releases](https://github.com/fredrikaverpil/pyside2-windows/releases) contain built PySide2 wheels.
 
 If you wish to check the wheels produced by e.g. a PR, see the [AppVeyor build history](https://ci.appveyor.com/project/fredrikaverpil/pyside2-windows/history), navigate to a build and download the attached artifacts.
-
-<br><br>
-
-
-## Known issues
-
-### Build issues
-
-- `libxml2`/`libxslt` libraries are not installed/available. Is is also my understanding that the Windows version of PySide2 does not yet support these anyways.
-
-### Upstream issues
-
-All upstream issues should be reported in the [official PySide issue tracker](https://bugreports.qt.io/projects/PYSIDE/issues).
-
-Note: PRs attempting to fix upstream fixes will not be accepted. Please send your PR upstream instead.
-
-<br><br>
 
 
 ## How does this work?
@@ -52,7 +32,6 @@ If a `git tag` initiated the AppVeyor job, a Github release is also peformed. Al
 
 [Rolling builds](https://www.appveyor.com/docs/build-configuration/#rolling-builds) are enabled for this project in AppVeyor, which means that queued up jobs are cancelled if a new job is initiated.
 
-<br><br>
 
 ### Tagging creates a new relese
 
@@ -60,12 +39,22 @@ Manual tagging causes a Github release to be created through CI deploy. PySide2 
 
 ```bash
 git commit -am "Commit all changes..."
-git push  # triggers an AppVeyor build
+git push  # triggers a build
 git tag 2018.01.01
 git push origin 2018.01.01  # cancels previous build, starts new build and generates release
 ```
 
-<br><br>
+
+### A note on Upstream issues
+
+All upstream issues should be reported in the [official PySide issue tracker](https://bugreports.qt.io/projects/PYSIDE/issues).
+
+Note: PRs attempting to fix upstream fixes will not be accepted. Please send your PR upstream instead.
+
+
+### Ask questions in the PySide/PySide2 gitter
+
+If you have any general questions, please check out the [PySide2 Gitter community](https://gitter.im/PySide/pyside2). If you prefer IRC, check out `#qt-pyside` on irc.freenode.net.
 
 
 ### Useful links
