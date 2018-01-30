@@ -22,7 +22,7 @@ environment:
     - PYTHON: "C:\\Python35"
       QT: "C:\\Qt\\5.6\\msvc2015"
       PYSIDE_BRANCH: "5.6"
-      OPENSSL: "C:\\OpenSSL-Win32\\bin"
+      OPENSSL: "C:\\OpenSSL-Win32\\bin\\openssl.exe"
       VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
       ARCH: x86
       APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
@@ -33,7 +33,7 @@ environment:
     - PYTHON: "C:\\Python35-x64"
       QT: "C:\\Qt\\5.6\\msvc2015_64"
       PYSIDE_BRANCH: "5.6"
-      OPENSSL: "C:\\OpenSSL-Win64\\bin"
+      OPENSSL: "C:\\OpenSSL-Win64\\bin\\openssl.exe"
       VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
       ARCH: amd64
       APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
@@ -44,7 +44,7 @@ environment:
     - PYTHON: "C:\\Python36"
       QT: "C:\\Qt\\5.6\\msvc2015"
       PYSIDE_BRANCH: "5.6"
-      OPENSSL: "C:\\OpenSSL-Win32\\bin"
+      OPENSSL: "C:\\OpenSSL-Win32\\bin\\openssl.exe"
       VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
       ARCH: x86
       APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
@@ -55,7 +55,7 @@ environment:
     - PYTHON: "C:\\Python36-x64"
       QT: "C:\\Qt\\5.6\\msvc2015_64"
       PYSIDE_BRANCH: "5.6"
-      OPENSSL: "C:\\OpenSSL-Win64\\bin"
+      OPENSSL: "C:\\OpenSSL-Win64\\bin\\openssl.exe"
       VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
       ARCH: amd64
       APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
@@ -68,7 +68,7 @@ environment:
       PYSIDE_BRANCH: "5.9"
       LIBCLANG_ZIP_FOLDER: http://download.qt.io/development_releases/prebuilt/libclang
       LIBCLANG_ZIP: libclang-release_39-windows-vs2015_32.7z
-      OPENSSL: "C:\\OpenSSL-Win32\\bin"
+      OPENSSL: "C:\\OpenSSL-Win32\\bin\\openssl.exe"
       VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
       ARCH: x86
       APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
@@ -81,7 +81,7 @@ environment:
       PYSIDE_BRANCH: "5.9"
       LIBCLANG_ZIP_FOLDER: http://download.qt.io/development_releases/prebuilt/libclang
       LIBCLANG_ZIP: libclang-release_39-windows-vs2015_64.7z
-      OPENSSL: "C:\\OpenSSL-Win64\\bin"
+      OPENSSL: "C:\\OpenSSL-Win64\\bin\\openssl.exe"
       VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
       ARCH: amd64
       APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
@@ -94,7 +94,7 @@ environment:
       PYSIDE_BRANCH: "5.9"
       LIBCLANG_ZIP_FOLDER: http://download.qt.io/development_releases/prebuilt/libclang
       LIBCLANG_ZIP: libclang-release_39-windows-vs2015_32.7z
-      OPENSSL: "C:\\OpenSSL-Win32\\bin"
+      OPENSSL: "C:\\OpenSSL-Win32\\bin\\openssl.exe"
       VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
       ARCH: x86
       APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
@@ -107,7 +107,7 @@ environment:
       PYSIDE_BRANCH: "5.9"
       LIBCLANG_ZIP_FOLDER: http://download.qt.io/development_releases/prebuilt/libclang
       LIBCLANG_ZIP: libclang-release_39-windows-vs2015_64.7z
-      OPENSSL: "C:\\OpenSSL-Win64\\bin"
+      OPENSSL: "C:\\OpenSSL-Win64\\bin\\openssl.exe"
       VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
       ARCH: amd64
       APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
@@ -119,7 +119,6 @@ init:
   - pwd
   - SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
   - if defined VS call "%VS%" %ARCH%
-  - dir C:\OpenSSL-Win64\bin
 
 
 install:
