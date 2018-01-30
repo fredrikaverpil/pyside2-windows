@@ -64,3 +64,14 @@ git push  # triggers an AppVeyor build
 git tag 2018.01.01
 git push origin 2018.01.01  # cancels previous build, starts new build and generates release
 ```
+
+<br><br>
+
+
+### Useful links
+
+- [PySide2 Getting Started Wiki](https://wiki.qt.io/PySide2_GettingStarted)
+- [Coin CI pyside-setup](https://testresults.qt.io/coin/?project=pyside%2Fpyside-setup)
+- Supported platforms and configurations
+  - [Qt 5.6](https://doc.qt.io/qt-5.6/supported-platforms-and-configurations.html)
+  - [Qt 5.9](https://doc.qt.io/qt-5.9/supported-platforms-and-configurations.html)
