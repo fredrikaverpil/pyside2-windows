@@ -18,88 +18,88 @@ environment:
     CMAKE: "C:\\Program Files (x86)\\cmake\\bin\\cmake.exe"
 
   matrix:
-    # Qt 5.6, Python 3.5 32-bit, MSVC2015 (v14)
-    - PYTHON: "C:\\Python35"
-      QT: "C:\\Qt\\5.6\\msvc2015"
-      PYSIDE_BRANCH: "5.6"
-      OPENSSL: "C:\\OpenSSL-Win32\\bin"
-      VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
-      ARCH: x86
-      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-      platform: x86
-      fast_finish: true
+    # # Qt 5.6, Python 3.5 32-bit, MSVC2015 (v14)
+    # - PYTHON: "C:\\Python35"
+    #   QT: "C:\\Qt\\5.6\\msvc2015"
+    #   PYSIDE_BRANCH: "5.6"
+    #   OPENSSL: "C:\\OpenSSL-Win32\\bin"
+    #   VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
+    #   ARCH: x86
+    #   APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    #   platform: x86
+    #   fast_finish: true
 
-    # Qt 5.6, Python 3.5 64-bit, MSVC2015 (v14)
-    - PYTHON: "C:\\Python35-x64"
-      QT: "C:\\Qt\\5.6\\msvc2015_64"
-      PYSIDE_BRANCH: "5.6"
-      OPENSSL: "C:\\OpenSSL-Win64\\bin"
-      VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
-      ARCH: amd64
-      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-      platform: x64
-      fast_finish: true
+    # # Qt 5.6, Python 3.5 64-bit, MSVC2015 (v14)
+    # - PYTHON: "C:\\Python35-x64"
+    #   QT: "C:\\Qt\\5.6\\msvc2015_64"
+    #   PYSIDE_BRANCH: "5.6"
+    #   OPENSSL: "C:\\OpenSSL-Win64\\bin"
+    #   VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
+    #   ARCH: amd64
+    #   APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    #   platform: x64
+    #   fast_finish: true
 
-    # Qt 5.6, Python 3.6 32-bit, MSVC2015 (v14)
-    - PYTHON: "C:\\Python36"
-      QT: "C:\\Qt\\5.6\\msvc2015"
-      PYSIDE_BRANCH: "5.6"
-      OPENSSL: "C:\\OpenSSL-Win32\\bin"
-      VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
-      ARCH: x86
-      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-      platform: x86
-      fast_finish: true
+    # # Qt 5.6, Python 3.6 32-bit, MSVC2015 (v14)
+    # - PYTHON: "C:\\Python36"
+    #   QT: "C:\\Qt\\5.6\\msvc2015"
+    #   PYSIDE_BRANCH: "5.6"
+    #   OPENSSL: "C:\\OpenSSL-Win32\\bin"
+    #   VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
+    #   ARCH: x86
+    #   APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    #   platform: x86
+    #   fast_finish: true
 
-    # Qt 5.6, Python 3.6 64-bit, MSVC2015 (v14)
-    - PYTHON: "C:\\Python36-x64"
-      QT: "C:\\Qt\\5.6\\msvc2015_64"
-      PYSIDE_BRANCH: "5.6"
-      OPENSSL: "C:\\OpenSSL-Win64\\bin"
-      VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
-      ARCH: amd64
-      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-      platform: x64
-      fast_finish: true
+    # # Qt 5.6, Python 3.6 64-bit, MSVC2015 (v14)
+    # - PYTHON: "C:\\Python36-x64"
+    #   QT: "C:\\Qt\\5.6\\msvc2015_64"
+    #   PYSIDE_BRANCH: "5.6"
+    #   OPENSSL: "C:\\OpenSSL-Win64\\bin"
+    #   VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
+    #   ARCH: amd64
+    #   APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    #   platform: x64
+    #   fast_finish: true
 
-    # Qt 5.9, Python 3.5 32-bit, MSVC2015 (v14)
-    - PYTHON: "C:\\Python35"
-      QT: "C:\\Qt\\5.9\\msvc2015"
-      PYSIDE_BRANCH: "5.9"
-      LIBCLANG_ZIP_FOLDER: http://download.qt.io/development_releases/prebuilt/libclang
-      LIBCLANG_ZIP: libclang-release_39-windows-vs2015_32.7z
-      OPENSSL: "C:\\OpenSSL-Win32\\bin"
-      VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
-      ARCH: x86
-      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-      platform: x86
-      fast_finish: true
+    # # Qt 5.9, Python 3.5 32-bit, MSVC2015 (v14)
+    # - PYTHON: "C:\\Python35"
+    #   QT: "C:\\Qt\\5.9\\msvc2015"
+    #   PYSIDE_BRANCH: "5.9"
+    #   LIBCLANG_ZIP_FOLDER: http://download.qt.io/development_releases/prebuilt/libclang
+    #   LIBCLANG_ZIP: libclang-release_39-windows-vs2015_32.7z
+    #   OPENSSL: "C:\\OpenSSL-Win32\\bin"
+    #   VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
+    #   ARCH: x86
+    #   APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    #   platform: x86
+    #   fast_finish: true
 
-    # Qt 5.9, Python 3.5 64-bit, MSVC2015 (v14)
-    - PYTHON: "C:\\Python35-x64"
-      QT: "C:\\Qt\\5.9\\msvc2015_64"
-      PYSIDE_BRANCH: "5.9"
-      LIBCLANG_ZIP_FOLDER: http://download.qt.io/development_releases/prebuilt/libclang
-      LIBCLANG_ZIP: libclang-release_39-windows-vs2015_64.7z
-      OPENSSL: "C:\\OpenSSL-Win64\\bin"
-      VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
-      ARCH: amd64
-      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-      platform: x64
-      fast_finish: true
+    # # Qt 5.9, Python 3.5 64-bit, MSVC2015 (v14)
+    # - PYTHON: "C:\\Python35-x64"
+    #   QT: "C:\\Qt\\5.9\\msvc2015_64"
+    #   PYSIDE_BRANCH: "5.9"
+    #   LIBCLANG_ZIP_FOLDER: http://download.qt.io/development_releases/prebuilt/libclang
+    #   LIBCLANG_ZIP: libclang-release_39-windows-vs2015_64.7z
+    #   OPENSSL: "C:\\OpenSSL-Win64\\bin"
+    #   VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
+    #   ARCH: amd64
+    #   APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    #   platform: x64
+    #   fast_finish: true
 
-    # Qt 5.9, Python 3.6 32-bit, MSVC2015 (v14)
-    - PYTHON: "C:\\Python36"
-      QT: "C:\\Qt\\5.9\\msvc2015"
-      PYSIDE_BRANCH: "5.9"
-      LIBCLANG_ZIP_FOLDER: http://download.qt.io/development_releases/prebuilt/libclang
-      LIBCLANG_ZIP: libclang-release_39-windows-vs2015_32.7z
-      OPENSSL: "C:\\OpenSSL-Win32\\bin"
-      VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
-      ARCH: x86
-      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-      platform: x86
-      fast_finish: true
+    # # Qt 5.9, Python 3.6 32-bit, MSVC2015 (v14)
+    # - PYTHON: "C:\\Python36"
+    #   QT: "C:\\Qt\\5.9\\msvc2015"
+    #   PYSIDE_BRANCH: "5.9"
+    #   LIBCLANG_ZIP_FOLDER: http://download.qt.io/development_releases/prebuilt/libclang
+    #   LIBCLANG_ZIP: libclang-release_39-windows-vs2015_32.7z
+    #   OPENSSL: "C:\\OpenSSL-Win32\\bin"
+    #   VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
+    #   ARCH: x86
+    #   APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    #   platform: x86
+    #   fast_finish: true
 
     # Qt 5.9, Python 3.6 64-bit, MSVC2015 (v14)
     - PYTHON: "C:\\Python36-x64"
@@ -133,7 +133,12 @@ install:
   - if [%PYSIDE_BRANCH%]==[5.9] (7z x %LIBCLANG_ZIP%)
   - if [%PYSIDE_BRANCH%]==[5.9] (SET CLANG_INSTALL_DIR=%CD%\libclang)
 
+
   - git clone --recursive --branch %PYSIDE_BRANCH% https://code.qt.io/pyside/pyside-setup.git C:\pyside-setup
+
+  # Try patch https://codereview.qt-project.org/#/c/223956/
+  # for bug https://bugreports.qt.io/browse/PYSIDE-585
+  - if [%PYSIDE_BRANCH%]==[5.9] (cd C:\pyside-setup && git fetch https://codereview.qt-project.org/pyside/pyside-setup refs/changes/56/223956/1 && git checkout FETCH_HEAD)
 
 
 before_build:
@@ -144,6 +149,7 @@ before_build:
   - git --version
   - clang --version
   - '%QT%\bin\qmake.exe --version'
+
 
 
 build_script:
