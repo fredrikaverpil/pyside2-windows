@@ -138,7 +138,7 @@ install:
 
   # Try patch https://codereview.qt-project.org/#/c/223956/
   # for bug https://bugreports.qt.io/browse/PYSIDE-585
-  - if [%PYSIDE_BRANCH%]==[5.9] (cd C:\pyside-setup && git fetch https://codereview.qt-project.org/pyside/pyside-setup refs/changes/56/223956/1 && git checkout FETCH_HEAD)
+  - if [%PYSIDE_BRANCH%]==[5.9] (cd C:\pyside-setup && git fetch https://codereview.qt-project.org/pyside/pyside-setup refs/changes/56/223956/1 && git checkout FETCH_HEAD && cd C:\projects\pyside2-windows)
 
 
 before_build:
