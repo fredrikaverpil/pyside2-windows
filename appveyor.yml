@@ -67,7 +67,7 @@ environment:
       QT: "C:\\Qt\\5.9\\msvc2015"
       PYSIDE_BRANCH: "5.9"
       LIBCLANG_ZIP_FOLDER: http://download.qt.io/development_releases/prebuilt/libclang
-      LIBCLANG_ZIP: libclang-release_39-windows-vs2015_32.7z
+      LIBCLANG_ZIP: libclang-release_50-windows-vs2015_32-clazy.7z
       OPENSSL: "C:\\OpenSSL-Win32\\bin"
       VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
       ARCH: x86
@@ -80,7 +80,7 @@ environment:
       QT: "C:\\Qt\\5.9\\msvc2015_64"
       PYSIDE_BRANCH: "5.9"
       LIBCLANG_ZIP_FOLDER: http://download.qt.io/development_releases/prebuilt/libclang
-      LIBCLANG_ZIP: libclang-release_39-windows-vs2015_64.7z
+      LIBCLANG_ZIP: libclang-release_50-windows-mingw_64-clazy.7z
       OPENSSL: "C:\\OpenSSL-Win64\\bin"
       VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
       ARCH: amd64
@@ -93,7 +93,7 @@ environment:
       QT: "C:\\Qt\\5.9\\msvc2015"
       PYSIDE_BRANCH: "5.9"
       LIBCLANG_ZIP_FOLDER: http://download.qt.io/development_releases/prebuilt/libclang
-      LIBCLANG_ZIP: libclang-release_39-windows-vs2015_32.7z
+      LIBCLANG_ZIP: libclang-release_50-windows-vs2015_32-clazy.7z
       OPENSSL: "C:\\OpenSSL-Win32\\bin"
       VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
       ARCH: x86
@@ -106,7 +106,7 @@ environment:
       QT: "C:\\Qt\\5.9\\msvc2015_64"
       PYSIDE_BRANCH: "5.9"
       LIBCLANG_ZIP_FOLDER: http://download.qt.io/development_releases/prebuilt/libclang
-      LIBCLANG_ZIP: libclang-release_39-windows-vs2015_64.7z
+      LIBCLANG_ZIP: libclang-release_50-windows-mingw_64-clazy.7z
       OPENSSL: "C:\\OpenSSL-Win64\\bin"
       VS: "C:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\vcvarsall.bat"
       ARCH: amd64
