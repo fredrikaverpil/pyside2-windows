@@ -2,7 +2,7 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/fhgrc83ql9w09kei/branch/master?svg=true)](https://ci.appveyor.com/project/fredrikaverpil/pyside2-windows/branch/master)
 
-Unoffical PySide2 standalone wheels for Windows.
+Unoffical PySide2 standalone wheels for Windows. _**Official**_ wheels [now available](http://lists.qt-project.org/pipermail/pyside/2018-March/002537.html)!
 
 
 ## Sister projects
