@@ -4,7 +4,7 @@
 
 Unoffical PySide2 standalone wheels for Windows.
 
-:fire: _Official_ wheels are [now available](http://lists.qt-project.org/pipermail/pyside/2018-March/002537.html)!
+:fire: _Official_ wheels are [now available](http://blog.qt.io/blog/2018/06/13/qt-python-5-11-released/)!
 
 
 ## Sister projects
