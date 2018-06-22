@@ -4,7 +4,7 @@
 
 Unoffical PySide2 standalone wheels for Windows.
 
-:fire: _Official_ wheels are now available as [Qt for Python](https://www.qt.io/qt-for-python) (PySide2) has officially been released by The Qt Company. I am no longer going to maintain this repository for this reason. Go get the official wheels!
+:fire: _Official_ wheels are now available as [Qt for Python](https://www.qt.io/qt-for-python) (PySide2) has officially been released by The Qt Company. I am **no longer going to maintain this repository** for this reason. Go get the official wheels!
 
 
 ## Sister projects
