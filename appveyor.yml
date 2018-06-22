@@ -41,7 +41,7 @@ environment:
       platform: x64
       fast_finish: true
 
-    # Qt 5.9, Python 3.6 32-bit, MSVC2015 (v14)
+    # Qt 5.11, Python 3.6 32-bit, MSVC2015 (v14)
     - PYTHON: "C:\\Python36"
       QT: "C:\\Qt\\5.9\\msvc2015"
       PYSIDE_BRANCH: "5.11"
@@ -54,7 +54,7 @@ environment:
       platform: x86
       fast_finish: true
 
-    # Qt 5.9, Python 3.6 64-bit, MSVC2015 (v14)
+    # Qt 5.11, Python 3.6 64-bit, MSVC2015 (v14)
     - PYTHON: "C:\\Python36-x64"
       QT: "C:\\Qt\\5.9\\msvc2015_64"
       PYSIDE_BRANCH: "5.11"
