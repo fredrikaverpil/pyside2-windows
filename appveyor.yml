@@ -82,7 +82,7 @@ install:
   # pip-installing lxml doesn't provide the libXml2/libxml2 libraries, only the binaries
   # - pip install lxml
 
-  # libclang required for PySide2 5.9 branch
+  # libclang required for PySide2 > 5.6 branch
   - if NOT [%PYSIDE_BRANCH%]==[5.6] (curl -L -fsS -o %LIBCLANG_ZIP% %LIBCLANG_ZIP_FOLDER%/%LIBCLANG_ZIP%)
   - if NOT [%PYSIDE_BRANCH%]==[5.6] (7z x %LIBCLANG_ZIP%)
   - if NOT [%PYSIDE_BRANCH%]==[5.6] (SET CLANG_INSTALL_DIR=%CD%\libclang)
