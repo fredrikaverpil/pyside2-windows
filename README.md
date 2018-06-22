@@ -18,7 +18,7 @@ Unoffical PySide2 standalone wheels for Windows.
 
 [Releases](https://github.com/fredrikaverpil/pyside2-windows/releases) contain built PySide2 wheels.
 
-If you wish to check the wheels produced by e.g. a PR, see the [AppVeyor build history](https://ci.appveyor.com/project/fredrikaverpil/pyside2-windows/history), navigate to a build and download the attached artifacts.
+If you wish to check the wheels produced by e.g. a PR, see the [AppVeyor build history](https://ci.appveyor.com/project/fredrikaverpil/pyside2-windows/history), navigate to a build and download the attached artifacts. Note that the artifacts will be deleted after [some time](https://www.appveyor.com/docs/packaging-artifacts/#artifacts-retention-policy).
 
 
 ## How does this work?
